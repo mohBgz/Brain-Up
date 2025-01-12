@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
 
     SeeYouSoon();
     Mix_PlayMusic(BG_Music,1);
-    MakeScreenFlick(render);
+    EndingScreen(render);
 
     /*************
 

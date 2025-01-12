@@ -2432,67 +2432,48 @@ int TestFinJeuM(int N , int Mat_verCasesRemplites[N][N])
 
 
 }
-void MakeScreenFlick(SDL_Renderer *render)
+void EndingScreen(SDL_Renderer *render)
 {
     SDL_Event event;
 
-    char str[30]="By : </$ Game_Coder Team >";
-
-
+    char str[60]="Made By: Github@mohBgz ";
 
     TTF_Init();
     TTF_Font *font =TTF_OpenFont(".\\Fonts\\Byte.ttf",20);
 
-
-
     SDL_Color WHITE ={255,255,255,255};
 
-
     bool quit=false;
-    int i=0;
+    Uint32 startTime = SDL_GetTicks();
 
     while(!quit)
     {
-
-
         while(SDL_PollEvent(&event)>0)
-            {
-
-                if(event.type==SDL_QUIT)
-                    quit=true;
-
-
-            for(i=0;i<255;i++)
-            {
-                SDL_SetRenderDrawColor(render,50,198+i,180-i,255);
-                SDL_RenderClear(render);
-
-
-                SDL_Color Color={i,i,i,255};
-                SDL_Surface *TextSurface=TTF_RenderText_Blended(font,str,Color);
-                SDL_Rect rect={150,720/2,TextSurface->w,TextSurface->h};
-                SDL_Texture *TextTexture=SDL_CreateTextureFromSurface(render,TextSurface);
-
-                SDL_RenderCopy(render,TextTexture,NULL,&rect);
-                SDL_RenderPresent(render);
-
-                SDL_DestroyTexture(TextTexture);
-                SDL_FreeSurface(TextSurface);
-
-            }
-
-
+        {
+            if(event.type==SDL_QUIT)
+                quit=true;
         }
 
+        Uint32 currentTime = SDL_GetTicks();
+        if ((currentTime - startTime) >= 1000) // 1 second
+        {
+            SDL_SetRenderDrawColor(render,50,198,180,255);
+            SDL_RenderClear(render);
 
+            SDL_Surface *TextSurface=TTF_RenderText_Blended_Wrapped(font,str,WHITE, 700);
+            SDL_Rect rect={720/2 - TextSurface->w/2, 720/2 - TextSurface->h/2, TextSurface->w, TextSurface->h};
+            SDL_Texture *TextTexture=SDL_CreateTextureFromSurface(render,TextSurface);
 
+            SDL_RenderCopy(render,TextTexture,NULL,&rect);
+            SDL_RenderPresent(render);
 
+            SDL_DestroyTexture(TextTexture);
+            SDL_FreeSurface(TextSurface);
 
+            startTime = currentTime; // Reset the timer
+        }
 
-
-
-    SDL_Delay(20);
-
+        SDL_Delay(20);
     }
     TTF_CloseFont(font);
 }
