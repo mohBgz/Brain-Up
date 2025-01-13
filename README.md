@@ -73,3 +73,42 @@ In both cases, you can follow the next 2 steps:
     ```
 
     **Enjoy the game!😉🎉**
+    ## 🤝 Contribution
+
+    We welcome contributions to improve the game! If you have any ideas, suggestions, or bug fixes, please follow these steps:
+
+    1. **Fork the Repository:**
+        - Click the "Fork" button at the top right of the repository page.
+
+    2. **Clone Your Fork:**
+        - Clone your forked repository to your local machine:
+        ```sh
+        git clone https://github.com/your-username/Brain-Up.git
+        ```
+
+    3. **Create a New Branch:**
+        - Create a new branch for your feature or bug fix:
+        ```sh
+        git checkout -b feature-or-bugfix-name
+        ```
+
+    4. **Make Your Changes:**
+        - Implement your changes and commit them with a descriptive message:
+        ```sh
+        git commit -m "Description of the changes"
+        ```
+
+    5. **Push to Your Fork:**
+        - Push your changes to your forked repository:
+        ```sh
+        git push origin feature-or-bugfix-name
+        ```
+
+    6. **Create a Pull Request:**
+        - Open a pull request to the main repository, describing your changes in detail.
+
+    Thank you for your contributions! 🙌
+
+    ## 📜 License
+
+    This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
