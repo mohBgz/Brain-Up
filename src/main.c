@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
 
      // Load background music
-    Mix_Music *BG_Music=Mix_LoadMUS(".\\music\\Background.wav");
+    Mix_Music *BG_Music=Mix_LoadMUS(".\\assets\\music\\Background.wav");
 
 
 

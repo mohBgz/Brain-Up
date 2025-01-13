@@ -16,7 +16,7 @@ void designe_button_pause(SDL_Renderer *render,int X , int Y)
 {
     IMG_Init(IMG_INIT_PNG);
 
-    SDL_Surface *ButtonPause= IMG_Load(".\\images\\pausebutton.png");
+    SDL_Surface *ButtonPause= IMG_Load(".\\assets\\images\\pausebutton.png");
     SDL_Texture *Tbutton =SDL_CreateTextureFromSurface(render,ButtonPause);
     int W=ButtonPause->w ;
     int H=ButtonPause->h;
@@ -46,7 +46,7 @@ void TempsAff_Seconde(int Seconde , SDL_Renderer *render,SDL_Color color,int Pos
 
     TTF_Init();
 
-    TTF_Font *font=TTF_OpenFont(".\\Fonts\\arial.ttf",40);
+    TTF_Font *font=TTF_OpenFont(".\\assets\\fonts\\arial.ttf",40);
 
     SDL_Rect Textrect;
 
@@ -93,7 +93,7 @@ void TempsAff_Ms(int ms , SDL_Renderer *render,SDL_Color color,int PosX,int PosY
 
     TTF_Init();
 
-    TTF_Font *font=TTF_OpenFont(".\\Fonts\\arial.ttf",40);
+    TTF_Font *font=TTF_OpenFont(".\\assets\\fonts\\arial.ttf",40);
 
     SDL_Rect Textrect;
 
@@ -138,7 +138,7 @@ void Score_Affiche(int Score , SDL_Renderer *render,SDL_Color color,int PosX,int
 
     TTF_Init();
 
-    TTF_Font *font=TTF_OpenFont(".\\Fonts\\Byte.ttf",25);
+    TTF_Font *font=TTF_OpenFont(".\\assets\\fonts\\Byte.ttf",25);
 
     SDL_Rect Textrect;
 
@@ -185,7 +185,7 @@ void Best_Score_Affiche_WINNER(int BestScore, SDL_Renderer *render,SDL_Color col
 
     TTF_Init();
 
-    TTF_Font *font=TTF_OpenFont(".\\Fonts\\Byte.ttf",16);
+    TTF_Font *font=TTF_OpenFont(".\\assets\\fonts\\Byte.ttf",16);
 
     SDL_Rect Textrect;
 
@@ -233,7 +233,7 @@ void Score_Affiche_WINNER(int Score , SDL_Renderer *render,SDL_Color color,int P
 
     TTF_Init();
 
-    TTF_Font *font=TTF_OpenFont(".\\Fonts\\Byte.ttf",14);
+    TTF_Font *font=TTF_OpenFont(".\\assets\\fonts\\Byte.ttf",14);
 
     SDL_Rect Textrect;
 
@@ -374,7 +374,7 @@ void designe_Timer (SDL_Renderer *render,SDL_Window *window)
 
     IMG_Init(IMG_INIT_PNG);
 
-    SDL_Surface *image=IMG_Load(".\\images\\timericon.png");
+    SDL_Surface *image=IMG_Load(".\\assets\\images\\timericon.png");
     SDL_Texture *Timage=SDL_CreateTextureFromSurface(render,image);
     imagerect.h=image->h;
     imagerect.w=image->w;
@@ -1032,7 +1032,7 @@ void affiche_Mat_designe1(SDL_Renderer *render , SDL_Surface *surfaceMat,  int X
     IMG_Init(IMG_INIT_PNG);
     TTF_Init();
 
-    TTF_Font *font = TTF_OpenFont(".\\Fonts\\Byte.ttf",25);
+    TTF_Font *font = TTF_OpenFont(".\\assets\\fonts\\Byte.ttf",25);
 
     ///SDL_Color white={255,255,255,255};
     SDL_Color white={118,254,242,255};
@@ -1049,7 +1049,7 @@ void affiche_Mat_designe1(SDL_Renderer *render , SDL_Surface *surfaceMat,  int X
     SDL_Texture *textureImage=NULL;
 
 
-    icon=IMG_Load(".\\images\\icon.png");
+    icon=IMG_Load(".\\assets\\images\\icon.png");
     textureImage=SDL_CreateTextureFromSurface(render,icon);
 
     /****///pour les utiliser plus tard
@@ -1161,7 +1161,7 @@ void affiche_FigurePause(SDL_Renderer *render)
 
     SDL_Rect rect ;
 
-    SDL_Surface *image=IMG_Load(".\\images\\Menupause.png");
+    SDL_Surface *image=IMG_Load(".\\assets\\images\\Menupause.png");
 
     rect.h=image->h;
     rect.w=image->w;
@@ -1980,7 +1980,7 @@ void Interface_DdebutJeu(SDL_Renderer *render)
 {
     IMG_Init(IMG_INIT_PNG);
 
-    SDL_Surface *image=IMG_Load(".\\images\\INTERFACE.png");
+    SDL_Surface *image=IMG_Load(".\\assets\\images\\INTERFACE.png");
 
 
     SDL_Texture *tex=SDL_CreateTextureFromSurface(render,image);
@@ -2060,7 +2060,7 @@ void GameOver(int partie,int score,bool *quit,SDL_Renderer *render,SDL_Renderer 
     int BestScorePlayer;
     SDL_Color Black={0,0,0,255};
 
-    FILE *BestScoreFileP = fopen(".\\Scores\\BestScore.txt","r");
+    FILE *BestScoreFileP = fopen(".\\assets\\scores\\BestScore.txt","r");
 
 
     if(partie==1 || partie==3)
@@ -2190,7 +2190,7 @@ void afficheWINNER(SDL_Renderer *render)
 
     SDL_Rect rect ;
 
-    SDL_Surface *image=IMG_Load(".\\images\\winner.png");
+    SDL_Surface *image=IMG_Load(".\\assets\\images\\winner.png");
 
     rect.h=image->h;
     rect.w=image->w;
@@ -2213,7 +2213,7 @@ void afficheGameOver(SDL_Renderer *render  )
 
     SDL_Rect rect ;
 
-    SDL_Surface *image=IMG_Load(".\\images\\gameover.png");
+    SDL_Surface *image=IMG_Load(".\\assets\\images\\gameover.png");
 
     rect.h=image->h;
     rect.w=image->w;
@@ -2235,8 +2235,8 @@ void WINNER(int partie,int score,bool *quit,SDL_Renderer *render,SDL_Renderer *r
     int BestScorePlayer,BestScoreAI;
     SDL_Color Black={0,0,0,255};
 
-    FILE *BestScoreFileP = fopen(".\\Scores\\BestScore.txt","r");
-    FILE *BestScoreFileAI = fopen(".\\Scores\\BestScoreMachine.txt","r");
+    FILE *BestScoreFileP = fopen(".\\assets\\scores\\BestScore.txt","r");
+    FILE *BestScoreFileAI = fopen(".\\assets\\scores\\BestScoreMachine.txt","r");
 
     switch(partie)
     {
@@ -2251,7 +2251,7 @@ void WINNER(int partie,int score,bool *quit,SDL_Renderer *render,SDL_Renderer *r
                 {
                     BestScorePlayer=score;
 
-                    FILE *BestScoreFile = fopen(".\\Scores\\BestScore.txt","w");
+                    FILE *BestScoreFile = fopen(".\\assets\\scores\\BestScore.txt","w");
                     fprintf(BestScoreFile,"%d",BestScorePlayer);
                     fclose(BestScoreFile);
 
@@ -2268,7 +2268,7 @@ void WINNER(int partie,int score,bool *quit,SDL_Renderer *render,SDL_Renderer *r
                 {
                     BestScoreAI=score;
 
-                    FILE *BestScoreFileAI = fopen(".\\Scores\\BestScoreMachine.txt","w");
+                    FILE *BestScoreFileAI = fopen(".\\assets\\scores\\BestScoreMachine.txt","w");
                     fprintf(BestScoreFileAI,"%d",BestScoreAI);
                     fclose(BestScoreFileAI);
 
@@ -2285,7 +2285,7 @@ void WINNER(int partie,int score,bool *quit,SDL_Renderer *render,SDL_Renderer *r
                 {
                     BestScorePlayer=score;
 
-                    FILE *BestScoreFile = fopen(".\\Scores\\BestScore.txt","w");
+                    FILE *BestScoreFile = fopen(".\\assets\\scores\\BestScore.txt","w");
                     fprintf(BestScoreFile,"%d",BestScorePlayer);
                     fclose(BestScoreFile);
 
@@ -2439,7 +2439,7 @@ void EndingScreen(SDL_Renderer *render)
     char str[60]="Made By: Github@mohBgz ";
 
     TTF_Init();
-    TTF_Font *font =TTF_OpenFont(".\\Fonts\\Byte.ttf",20);
+    TTF_Font *font =TTF_OpenFont(".\\assets\\fonts\\Byte.ttf",20);
 
     SDL_Color WHITE ={255,255,255,255};
 
@@ -2483,7 +2483,7 @@ void STAR(SDL_Renderer *render,int PosX , int PosY)
 
     IMG_Init(IMG_INIT_PNG);
 
-    SDL_Surface *image=IMG_Load(".\\images\\BestScoreStar.png");
+    SDL_Surface *image=IMG_Load(".\\assets\\images\\BestScoreStar.png");
     SDL_Texture *Timage=SDL_CreateTextureFromSurface(render,image);
 
     SDL_Rect rect;
