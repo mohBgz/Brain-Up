@@ -1,6 +1,6 @@
 # Brain-Up (Puzzle Game)
 
-Brain-Up is a clone of a mode within the real game Brain Up, made with the C language and the SDL2 library. 🧠🎮 This game replicates the engaging puzzle-solving experience from the original, offering users a series of mind-challenging puzzles to stimulate their brains.
+**Brain-Up** is a clone of the puzzle mode from the real game **[Brain Up](https://www.amazon.ca/Rationalcell-Brain-Up/dp/B00B2BSF12)**, built using **C** and the **SDL2** library. 🧠🎮
 
 
 ## How to Play the Game
